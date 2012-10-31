@@ -382,6 +382,7 @@ function close(){
     if(options.animation == true){
         $('#zoombox .zoombox_mask').fadeOut(200);
         $('#zoombox .zoombox_gallery').animate({bottom:-$('#zoombox .zoombox_gallery').innerHeight()},options.duration);
+        $('#zoombox .zoombox_close').hide();
         $('#zoombox .zoombox_container').animate(css,options.duration,function(){
             $('#zoombox').remove();
             state = 'closed';
@@ -404,9 +405,9 @@ function setContent(){
             height = (windowW() - 50) * height / width;
             width = windowW() - 50;
         }
-        if(height*1 + 50 > windowH()){
-            width = (windowH()-50) * width / height; 
-            height = windowH() - 50;
+        if(height*1 + 150 > windowH()){
+            width = (windowH()- 150) * width / height; 
+            height = windowH() - 150;
         }
     }
     var url = link;
